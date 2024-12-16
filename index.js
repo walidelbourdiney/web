@@ -8,7 +8,7 @@ const inputName = document.getElementById("name"); // The input element
 
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // Prevents the page from refreshing on form submission
-  const pokemonName = inputName.value;
+  const pokemonName = inputName.value.toLowerCase();
   getPokemon(pokemonName);
 });
 
@@ -38,3 +38,13 @@ async function getPokemon(name) {
     console.error(error);
   }
 }
+
+let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+let password = "";
+
+for (let i = 0; i < 8; i++) {
+  let randomIndex = Math.floor(Math.random() * chars.length);
+  password += chars[randomIndex];
+}
+
+console.log(password);
