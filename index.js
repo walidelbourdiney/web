@@ -116,24 +116,34 @@
 
 // console.log(Ali.introduction());
 
-function setCounter() {
-  let count = 0;
-  return {
-    increment: function () {
-      count++;
-      console.log(count);
-    },
-    decrement: function () {
-      count--;
-      console.log(count);
-    },
+// function setCounter() {
+//   let count = 0;
+//   return {
+//     increment: function () {
+//       count++;
+//       console.log(count);
+//     },
+//     decrement: function () {
+//       count--;
+//       console.log(count);
+//     },
+//   };
+// }
+
+// const press = setCounter();
+
+// const add = document.querySelector("#submit");
+// const subtract = document.querySelector("#de-submit");
+
+// add.addEventListener("click", press.increment);
+// subtract.addEventListener("click", press.decrement);
+
+function setTaxes(tax) {
+  return function (amount) {
+    return amount + tax * amount;
   };
 }
 
-const press = setCounter();
+const getTax = setTaxes(0.2);
 
-const add = document.querySelector("#submit");
-const subtract = document.querySelector("#de-submit");
-
-add.addEventListener("click", press.increment);
-subtract.addEventListener("click", press.decrement);
+console.log(getTax(500));
