@@ -132,9 +132,8 @@ function setCounter() {
 
 const press = setCounter();
 
-press.increment();
-press.increment();
-press.increment();
-press.increment();
-press.increment();
-press.decrement();
+const add = document.querySelector("#submit");
+const subtract = document.querySelector("#de-submit");
+
+add.addEventListener("click", press.increment);
+subtract.addEventListener("click", press.decrement);
