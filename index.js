@@ -153,6 +153,6 @@
 // const date = new Date();
 // console.log(date.getTimezoneOffset());
 
-console.log(new Date().toLocaleDateString("en-US"));
+// console.log(new Date().toLocaleDateString("en-US"));
 
-console.log(new Date().toLocaleTimeString("en-US"));
+// console.log(new Date().toLocaleTimeString("en-US"));
