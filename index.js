@@ -78,12 +78,32 @@
 //   }
 // }
 
-function Person(name, age, job, hobbies) {
-  this.name = name;
-  this.age = age;
-  this.job = job;
-  this.hobbies = hobbies;
-  this.introduction = function () {
+// function Person(name, age, job, hobbies) {
+//   this.name = name;
+//   this.age = age;
+//   this.job = job;
+//   this.hobbies = hobbies;
+//   this.introduction = function () {
+//     console.log(
+//       `My name is ${this.name}, I'm a ${
+//         this.job
+//       }, and my hobbies are ${this.hobbies.join(", ")}.`
+//     );
+//   };
+// }
+
+// const Ali = new Person("Ali", 32, "engineer", ["sports", "reding", "drawing"]);
+
+// console.log(Ali.introduction());
+
+class Person {
+  constructor(name, age, job, hobbies) {
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.hobbies = hobbies;
+  }
+  introduction = function () {
     console.log(
       `My name is ${this.name}, I'm a ${
         this.job
