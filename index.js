@@ -96,22 +96,22 @@
 
 // console.log(Ali.introduction());
 
-class Person {
-  constructor(name, age, job, hobbies) {
-    this.name = name;
-    this.age = age;
-    this.job = job;
-    this.hobbies = hobbies;
-  }
-  introduction = function () {
-    console.log(
-      `My name is ${this.name}, I'm a ${
-        this.job
-      }, and my hobbies are ${this.hobbies.join(", ")}.`
-    );
-  };
-}
+// class Person {
+//   constructor(name, age, job, hobbies) {
+//     this.name = name;
+//     this.age = age;
+//     this.job = job;
+//     this.hobbies = hobbies;
+//   }
+//   introduction = function () {
+//     console.log(
+//       `My name is ${this.name}, I'm a ${
+//         this.job
+//       }, and my hobbies are ${this.hobbies.join(", ")}.`
+//     );
+//   };
+// }
 
-const Ali = new Person("Ali", 32, "engineer", ["sports", "reding", "drawing"]);
+// const Ali = new Person("Ali", 32, "engineer", ["sports", "reding", "drawing"]);
 
-console.log(Ali.introduction());
+// console.log(Ali.introduction());
