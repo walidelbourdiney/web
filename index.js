@@ -138,12 +138,21 @@
 // add.addEventListener("click", press.increment);
 // subtract.addEventListener("click", press.decrement);
 
-function setTaxes(tax) {
-  return function (amount) {
-    return amount + tax * amount;
-  };
-}
+// function setTaxes(tax) {
+//   return function (amount) {
+//     return amount + tax * amount;
+//   };
+// }
 
-const getTax = setTaxes(0.2);
+// const getTax = setTaxes(0.2);
 
-console.log(getTax(500));
+// console.log(getTax(500));
+
+// const dateComponents = new Date(2024, 11, 22, 15, 30, 0); // Year, Month (0-based), Day, Hour, Minute, Second
+// console.log(dateComponents);
+// const date = new Date();
+// console.log(date.getTimezoneOffset());
+
+console.log(new Date().toLocaleDateString("en-US"));
+
+console.log(new Date().toLocaleTimeString("en-US"));
