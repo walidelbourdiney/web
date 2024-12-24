@@ -115,3 +115,26 @@
 // const Ali = new Person("Ali", 32, "engineer", ["sports", "reding", "drawing"]);
 
 // console.log(Ali.introduction());
+
+function setCounter() {
+  let count = 0;
+  return {
+    increment: function () {
+      count++;
+      console.log(count);
+    },
+    decrement: function () {
+      count--;
+      console.log(count);
+    },
+  };
+}
+
+const press = setCounter();
+
+press.increment();
+press.increment();
+press.increment();
+press.increment();
+press.increment();
+press.decrement();
