@@ -156,3 +156,5 @@
 // console.log(new Date().toLocaleDateString("en-US"));
 
 // console.log(new Date().toLocaleTimeString("en-US"));
+
+// Error handling //
