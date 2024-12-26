@@ -157,4 +157,41 @@
 
 // console.log(new Date().toLocaleTimeString("en-US"));
 
-// Error handling //
+// little game with eventListner
+
+const box = document.getElementById("box");
+const amount = 10;
+let x = 0;
+let y = 0;
+
+document.addEventListener("keydown", (event) => {
+  console.log(event.key);
+
+  if (event.key.startsWith("Arrow")) {
+    event.preventDefault();
+
+    switch (event.key) {
+      case "ArrowUp":
+        y -= amount;
+        break;
+      case "ArrowRight":
+        x += amount;
+        break;
+      case "ArrowDown":
+        y += amount;
+        break;
+      case "ArrowLeft":
+        x -= amount;
+        break;
+    }
+    box.style.top = `${y}px`;
+    box.style.left = `${x}px`;
+    box.style.backgroundColor = "yellow";
+    box.innerText = "😲";
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  box.style.backgroundColor = "aquamarine";
+  box.innerText = "😊";
+});
