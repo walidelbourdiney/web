@@ -262,51 +262,62 @@
 
 // getPokemonData();
 
-const form = document.getElementById("registrationForm");
+//
+document
+  .getElementById("feedbackForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission for validation
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent form submission
+    // Get form inputs
+    const email = document.getElementById("email").value.trim();
+    const age = document.getElementById("age").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-  // Validate username
-  const usernameInput = document.getElementById("username");
-  const usernameError = document.getElementById("usernameError");
-  if (usernameInput.value.length < 3) {
-    usernameError.textContent = "Username must be at least 3 characters long.";
-    return;
-  } else {
-    usernameError.textContent = "";
-  }
+    // Error message containers
+    const emailError = document.getElementById("emailError");
+    const ageError = document.getElementById("ageError");
+    const messageError = document.getElementById("messageError");
 
-  // Validate email
-  const emailInput = document.getElementById("email");
-  const emailError = document.getElementById("emailError");
-  if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(emailInput.value)) {
-    emailError.textContent = "Please enter a valid email address.";
-    return;
-  } else {
+    // Clear previous error messages
     emailError.textContent = "";
-  }
-
-  // Validate password
-  const passwordInput = document.getElementById("password");
-  const passwordError = document.getElementById("passwordError");
-  if (passwordInput.value.length < 6) {
-    passwordError.textContent = "Password must be at least 6 characters long.";
-    return;
-  } else {
-    passwordError.textContent = "";
-  }
-
-  // Validate age
-  const ageInput = document.getElementById("age");
-  const ageError = document.getElementById("ageError");
-  if (ageInput.value < 18 || ageInput.value > 99) {
-    ageError.textContent = "Age must be between 18 and 99.";
-    return;
-  } else {
     ageError.textContent = "";
-  }
+    messageError.textContent = "";
 
-  // If all validations pass, submit the form
-  form.submit();
-});
+    // Validation flags
+    let isValid = true;
+
+    // Email Validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    // Age Validation
+    const ageNumber = Number(age);
+    if (!age || isNaN(ageNumber) || ageNumber < 18 || ageNumber > 99) {
+      ageError.textContent = "Age must be a number between 18 and 99.";
+      isValid = false;
+    }
+
+    // Message Validation
+    const wordCount = message
+      .split(/\s+/)
+      .filter((word) => word.length > 0).length;
+    const charCount = message.length;
+
+    if (wordCount > 100) {
+      messageError.textContent = "Feedback message cannot exceed 100 words.";
+      isValid = false;
+    } else if (charCount > 5000) {
+      messageError.textContent =
+        "Feedback message cannot exceed 5000 characters.";
+      isValid = false;
+    }
+
+    // Submit the form if all validations pass
+    if (isValid) {
+      alert("Feedback submitted successfully!");
+      this.submit(); // Submit the form
+    }
+  });
