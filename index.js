@@ -198,16 +198,21 @@
 
 // #class to construct objects
 
-class Car {
-  constructor(name, model, year) {
-    this.name = name;
-    this.model = model;
-    this.year = year;
-  }
-  drive() {
-    return `you are driving ${this.model} that was manufactured in ${this.year}.`;
-  }
-}
+// class Car {
+//   constructor(name, model, year) {
+//     this.name = name;
+//     this.model = model;
+//     this.year = year;
+//   }
+//   drive() {
+//     return `you are driving ${this.model} that was manufactured in ${this.year}.`;
+//   }
+// }
 
-const myCar = new Car("BMW", "E6", "2024");
-console.log(myCar.drive());
+// const myCar = new Car("BMW", "E6", "2024");
+// console.log(myCar.drive());
+
+// let nums = [1, 2, 3, 4, 5];
+// nums.shift();
+// nums.push(6);
+// console.log(nums);
