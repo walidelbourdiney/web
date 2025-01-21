@@ -227,16 +227,37 @@
 
 // practice fetch()
 
+// const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
+
+// fetch(url)
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok");
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log("Pokemon Data:", data);
+//   })
+//   .catch((error) => console.error("Fetch Error:", error));
+
+// Example: Fetching Data with Async/Await
+
 const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
 
-fetch(url)
-  .then((response) => {
+async function getPokemonData() {
+  try {
+    const response = await fetch(url);
+
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error("Failed to fetch data");
     }
-    return response.json();
-  })
-  .then((data) => {
+
+    const data = await response.json();
     console.log("Pokemon Data:", data);
-  })
-  .catch((error) => console.error("Fetch Error:", error));
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+getPokemonData();
