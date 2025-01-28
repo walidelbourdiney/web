@@ -134,6 +134,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+p {
+  display: inline-block;
+}
 main {
   width: 80%;
   height: 50px;
@@ -150,10 +153,17 @@ form {
   align-items: center;
   margin-bottom: 50px;
 }
-form input {
-  width: 80%;
+form #author-text {
+  width: 20%;
   height: 2em;
   border-radius: 5px;
+  padding: 5px;
+}
+form #quote-text {
+  width: 50%;
+  height: 2em;
+  border-radius: 5px;
+  padding: 5px;
 }
 form button {
   padding: 10px 20px;

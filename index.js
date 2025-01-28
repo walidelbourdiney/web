@@ -323,17 +323,20 @@
 //   });
 
 // Variables for HTML elements
-const inputField = document.getElementById("input-text"); // Input field
-const addButton = document.getElementById("add-button"); // Add button
-const listContainer = document.getElementById("list-container"); // Unordered list container
+const inputField = document.getElementById("quote-text");
+const author = document.getElementById("author-text");
+const addButton = document.getElementById("add-button");
+const listContainer = document.getElementById("list-container");
 
 addButton.addEventListener("click", addQuote);
 
 function addQuote() {
   const inputValue = inputField.value.trim();
+  const BY = author.value.trim();
   const newEl = document.createElement("p");
   newEl.classList.add("para");
-  newEl.innerText = inputValue;
+  newEl.innerText = `${inputValue} by ${BY}`;
   listContainer.appendChild(newEl);
   inputField.value = "";
+  author.value = "";
 }
