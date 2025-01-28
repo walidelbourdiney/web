@@ -321,3 +321,19 @@
 //       this.submit(); // Submit the form
 //     }
 //   });
+
+// Variables for HTML elements
+const inputField = document.getElementById("input-text"); // Input field
+const addButton = document.getElementById("add-button"); // Add button
+const listContainer = document.getElementById("list-container"); // Unordered list container
+
+addButton.addEventListener("click", addQuote);
+
+function addQuote() {
+  const inputValue = inputField.value.trim();
+  const newEl = document.createElement("p");
+  newEl.classList.add("para");
+  newEl.innerText = inputValue;
+  listContainer.appendChild(newEl);
+  inputField.value = "";
+}
