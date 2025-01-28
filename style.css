@@ -110,3 +110,51 @@ textarea {
   font-size: 0.9em;
   margin: -10px 0 10px;
 } */
+
+/* add quote app */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  color: #555;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  background-color: rgb(126, 192, 192);
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+form {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form input {
+  width: 80%;
+  height: 2em;
+  border-radius: 5px;
+}
+form button {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
