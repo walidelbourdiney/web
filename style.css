@@ -134,9 +134,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-p {
-  display: inline-block;
-}
+
 main {
   width: 80%;
   height: 50px;
@@ -175,4 +173,11 @@ form button {
   font-size: 3rem;
   text-align: center;
   margin: 10px auto;
+}
+p {
+  display: inline-block;
+}
+#list-container {
+  width: 80%;
+  text-align: center;
 }
